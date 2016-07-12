@@ -1,0 +1,20 @@
+function [si, str_state, str_debug] = str(Ib, Qb, p, state_in)
+str_state = state_in;
+si = zeros(length(Ib),1);
+Tc2 = floor(p.Tc/2);
+
+%% delay the input by Tc / 2
+[str_state.delay_state, delay_out] = delay(str_state.delay_state, Ib);
+
+%% multiply the delayed waveform and Ib
+y1 = Ib.*delay_out;
+
+%% input the product to the pll
+[ref, accum, str_state.pll_state] = pll(y1, str_state.pll_state);
+
+%% finding out zero crossing
+accum_prev = str_state.accum_prev;
+accum1 = accum + str_state.ft;
+accum_prev1 = accum_prev + str_state.ft;
+
+if

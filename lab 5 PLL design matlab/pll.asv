@@ -1,0 +1,11 @@
+function [s_out, y] = pll(s_in, x);
+
+s = s_in;
+N_period = length(x);
+ref_in = x;
+ref_out(1)= sin(2*pi*s.acc);
+
+for n = 2:N_period 
+    z(n) = x(n-1)*y(n-1);
+    v(n) = s.a1*v(n-1)+s.b0*z(n)+s.b1*z(n-1);
+end

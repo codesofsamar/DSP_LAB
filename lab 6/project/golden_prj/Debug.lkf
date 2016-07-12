@@ -1,0 +1,8 @@
+-z -c -m"./Debug/dsp_ap.map" -o"./Debug/dsp_ap.out" -w -x -i"c:/ccstudio_v3.1/dsp_lab" -i"c:/ccstudio_v3.1/c6000/dsk6713/lib" -i"C:/CCStudio_v3.1/C6000/rtdx/lib" -i"C:/CCStudio_v3.1/C6000/csl/lib" -i"C:/CCStudio_v3.1/C6000/xdais/lib" -i"C:/CCStudio_v3.1/C6000/bios/lib" -i"C:/CCStudio_v3.1/C6000/cgtools/lib" -l"dsk6713_edma_aic23.l67" -l"c6x1x_edma_mcbsp.l67" -l"dsk6713bsl.lib"
+"C:\golden_prj\dsp_apcfg.cmd"
+"C:\golden_prj\Debug\dsp_ap.obj"
+"C:\golden_prj\Debug\dsp_apcfg.obj"
+"C:\golden_prj\Debug\dsp_apcfg_c.obj"
+"C:\golden_prj\Debug\dsp_top.obj"
+"C:\golden_prj\Debug\pll.obj"
+"C:\golden_prj\Debug\sin_tables.obj"

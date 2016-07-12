@@ -1,0 +1,41 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="F:\dsp_lab\golden_prj\"
+ProjectType=Executable
+CPUFamily=TMS320C62XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="dsp_ap.c"
+Source="dsp_ap.cdb"
+Source="dsp_top.c"
+
+[Generated Files]
+Source="dsp_apcfg.cmd"
+Source="dsp_apcfg.s62"
+Source="dsp_apcfg_c.c"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"d:\ccstudio_v3.1\dsp_lab" -i"d:\ccstudio_v3.1\c6000\dsk6713\include" -d"_DEBUG" -d"TARGET_DSK6713"
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release"
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\dsp_ap.map" -o".\Debug\dsp_ap.out" -w -x -i"d:\ccstudio_v3.1\dsp_lab" -i"d:\ccstudio_v3.1\c6000\dsk6713\lib" -l"dsk6713_edma_aic23.l67" -l"c6x1x_edma_mcbsp.l67" -l"dsk6713bsl.lib"
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\dsp_ap.map" -o".\Release\dsp_ap.out" -w -x
+
+["dsp_apcfg.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["dsp_apcfg.cmd" Settings: "Release"]
+LinkOrder=1
+

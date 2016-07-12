@@ -1,0 +1,4052 @@
+Library {
+  Name			  "test"
+  Version		  3.00
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  PostLoadFcn		  "setsysloc simulink_extras"
+  Created		  "Tue Jun 16 15:12:24 1998"
+  Creator		  "ldean"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "jon"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Feb  5 22:11:24 2010"
+  ModelVersionFormat	  "1.%<AutoIncrement:7>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "test"
+    Location		    [429, 103, 853, 214]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Additional\nDiscrete"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [87, 22, 137, 72]
+      ShowPortLabels	      on
+      MaskDisplay	      " plot([-20 20],[-15 -15],[-15 -15],[-20 20], [ "
+"-15  -10  -10 -5 -5  0  0 5 5 10 10 15 15 20],[-10 -10 2  2  13 13 8  8  4  4"
+"  1  1  -1 -1])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Additional\nDiscrete"
+	Location		[112, 241, 330, 430]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Discrete\nTransfer Fcn\n(with initial outpu"
+"ts)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [130, 12, 190, 48]
+	  ShowPortLabels	  on
+	  MaskType		  "Discrete Transfer Function with Initial Out"
+"puts"
+	  MaskDescription	  "Vector expressions for numerator, and denom"
+"inator. Coefficients are in descending powers of z."
+	  MaskHelp		  "Specify the initial output for the transfer"
+" function.  An optimization routine attempts to determine the appropriate ini"
+"tial states so that the specified initial output is achieved.  For more detai"
+"ls, see the m-file getxo.m"
+	  MaskPromptString	  "Numerator:|Denominator:|Initial input:|Init"
+"ial output:|Sample time:"
+	  MaskStyleString	  "edit,edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on,on"
+	  MaskCallbackString	  "||||"
+	  MaskEnableString	  "on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on"
+	  MaskVariables		  "N=@1;D=@2;U0=@3;Y0=@4;TS=@5;"
+	  MaskInitialization	  "[A,B,C,Dd]=tf2ss(N,D);if (isempty(Y0));[m,n"
+"]=size(A);X0=zeros(1,m); end;if (isempty(U0));[m,p]=size(B);U0=zeros(1,p);end"
+";X0=getxo(A,B,C,Dd,U0,Y0,1);"
+	  MaskDisplay		  "dpoly(N,D,'z')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[1]|[1  .5]|[1]|-.5|1"
+	  System {
+	    Name		    "Discrete\nTransfer Fcn\n(with initial out"
+"puts)"
+	    Location		    [374, 406, 663, 523]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      DiscreteStateSpace
+	      Name		      "Discrete\nState Space"
+	      Position		      [80, 24, 190, 66]
+	      A			      "A"
+	      B			      "B"
+	      C			      "C"
+	      D			      "Dd"
+	      X0		      "X0"
+	      SampleTime	      "TS"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [220, 38, 250, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Discrete\nState Space"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Discrete\nState Space"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Discrete\nTransfer Fcn\n(with initial state"
+"s)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [25, 12, 85, 48]
+	  ShowPortLabels	  on
+	  MaskType		  "Discrete Transfer Function with Initial Sta"
+"tes"
+	  MaskDescription	  "Vector expressions for numerator, and denom"
+"inator. Coefficients are in descending powers of z."
+	  MaskHelp		  "Specify the initial states for the transfer"
+" function.  The state ordering is determined by the m-file tf2ss.  There is n"
+"o unique mapping of the states in a transfer function to states in a state-sp"
+"ace representation.  However, tf2ss will consistently use the same mapping fo"
+"r a given transfer function.\n"
+	  MaskPromptString	  "Numerator:|Denominator:|Initial conditions:"
+"|Sample time:"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskVariables		  "N=@1;D=@2;X0=@3;TS=@4;"
+	  MaskInitialization	  " [A,B,C,Dd]=tf2ss(N,D);if (isempty(X0));[m,"
+"n]=size(A);X0=zeros(1,m); end;"
+	  MaskDisplay		  "dpoly(N,D,'z')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[1]|[1  .5]|[1]|.5"
+	  System {
+	    Name		    "Discrete\nTransfer Fcn\n(with initial sta"
+"tes)"
+	    Location		    [729, 65, 1010, 180]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      DiscreteStateSpace
+	      Name		      "Discrete\nState Space"
+	      Position		      [80, 27, 185, 63]
+	      A			      "A"
+	      B			      "B"
+	      C			      "C"
+	      D			      "Dd"
+	      X0		      "X0"
+	      SampleTime	      "TS"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [210, 38, 240, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Discrete\nState Space"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Discrete\nState Space"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Discrete\nZero-Pole\n(with initial outputs)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [130, 97, 190, 133]
+	  ShowPortLabels	  on
+	  MaskType		  "Discrete Zero-Pole with Initial Outputs"
+	  MaskDescription	  "Vector expressions for numerator, denominat"
+"or, and gain."
+	  MaskHelp		  "Specify the initial output for the zero-pol"
+"e-gain system.  An optimization routine attempts to determine the appropriate"
+" initial states so that the specified initial output is achieved.  For more d"
+"etails, see the m-file getxo.m"
+	  MaskPromptString	  "Zeros:|Poles:|Gain:|Initial input:|Initial "
+"output:|Sample time:"
+	  MaskStyleString	  "edit,edit,edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on,on,on"
+	  MaskCallbackString	  "|||||"
+	  MaskEnableString	  "on,on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on,on"
+	  MaskVariables		  "Z=@1;P=@2;K=@3;U0=@4;Y0=@5;TS=@6;"
+	  MaskInitialization	  "[A,B,C,D]=zp2ss(Z,P,K);if (isempty(Y0));[m,"
+"n]=size(A);X0=zeros(1,m); end;if (isempty(U0));[m,p]=size(B);U0=zeros(1,p);en"
+"d;X0=getxo(A,B,C,D,U0,Y0,1);"
+	  MaskDisplay		  "droots(Z,P,K,'z')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[1]|[0  .5]|[1]|1|.5|1"
+	  System {
+	    Name		    "Discrete\nZero-Pole\n(with initial output"
+"s)"
+	    Location		    [644, 85, 916, 192]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      DiscreteStateSpace
+	      Name		      "Discrete\nState Space"
+	      Position		      [80, 26, 195, 64]
+	      A			      "A"
+	      B			      "B"
+	      C			      "C"
+	      D			      "D"
+	      X0		      "X0"
+	      SampleTime	      "TS"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [220, 38, 250, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Discrete\nState Space"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Discrete\nState Space"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Discrete\nZero-Pole\n(with initial states)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [25, 97, 85, 133]
+	  ShowPortLabels	  on
+	  MaskType		  "Discrete Zero-Pole with Initial States"
+	  MaskDescription	  "Vector expressions for numerator, denominat"
+"or, and gain."
+	  MaskHelp		  "Specify the initial states for the transfer"
+" function.  The state ordering is determined by the m-file zp2ss.  There is n"
+"o unique mapping of the states in a zero-pole-gain representation to states i"
+"n a state-space representation.  However, zp2ss will consistently use the sam"
+"e mapping for a given transfer function.\n"
+	  MaskPromptString	  "Zeros:|Poles:|Gain:|Initial conditions:|Sam"
+"ple time:"
+	  MaskStyleString	  "edit,edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on,on"
+	  MaskCallbackString	  "||||"
+	  MaskEnableString	  "on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on"
+	  MaskVariables		  "Z=@1;P=@2;K=@3;X0=@4;TS=@5;"
+	  MaskInitialization	  "[A,B,C,D]=zp2ss(Z,P,K);if (isempty(X0));[m,"
+"n]=size(A);X0=zeros(1,m); end;"
+	  MaskDisplay		  "droots(Z,P,K,'z')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[1]|[0  .5]|[1]|1|.5"
+	  System {
+	    Name		    "Discrete\nZero-Pole\n(with initial states"
+")"
+	    Location		    [784, 55, 1072, 167]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      DiscreteStateSpace
+	      Name		      "Discrete\nState Space"
+	      Position		      [80, 27, 195, 63]
+	      A			      "A"
+	      B			      "B"
+	      C			      "C"
+	      D			      "D"
+	      X0		      "X0"
+	      SampleTime	      "TS"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [225, 38, 255, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Discrete\nState Space"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Discrete\nState Space"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Additional\nLinear"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [153, 22, 203, 72]
+      ShowPortLabels	      on
+      MaskDisplay	      "plot([-20 20],[-15 -15],[-15 -15],[-20 20],[-20"
+" 20],[-5 18])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Additional\nLinear"
+	Location		[178, 241, 406, 563]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PID Controller"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [145, 160, 175, 190]
+	  ShowPortLabels	  on
+	  MaskType		  "PID Controller"
+	  MaskDescription	  "Enter expressions for proportional, integra"
+"l, and derivative terms.\nP+I/s+Ds"
+	  MaskHelp		  "This block implements a PID controller wher"
+"e parameters are entered for the Proportional, Integral and Derivative terms."
+" Unmask this block to see how it works. The derivative term is implemented us"
+"ing a true derivative block."
+	  MaskPromptString	  "Proportional:|Integral:|Derivative:"
+	  MaskStyleString	  "edit,edit,edit"
+	  MaskTunableValueString  "on,on,on"
+	  MaskCallbackString	  "||"
+	  MaskEnableString	  "on,on,on"
+	  MaskVisibilityString	  "on,on,on"
+	  MaskVariables		  "P=@1;I=@2;D=@3;"
+	  MaskDisplay		  "disp('PID')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|1|0"
+	  System {
+	    Name		    "PID Controller"
+	    Location		    [290, 337, 652, 557]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In_1"
+	      Position		      [25, 65, 45, 85]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "D"
+	      Position		      [95, 129, 115, 151]
+	      Gain		      "D"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Derivative
+	      Name		      "Derivative"
+	      Position		      [150, 128, 190, 152]
+	    }
+	    Block {
+	      BlockType		      TransferFcn
+	      Name		      "Integral"
+	      Position		      [110, 57, 145, 93]
+	      Numerator		      "[I]"
+	      Denominator	      "[1 0]"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Proportional"
+	      Position		      [120, 13, 140, 37]
+	      Gain		      "P"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [245, 57, 265, 93]
+	      IconShape		      "rectangular"
+	      Inputs		      "+++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out_1"
+	      Position		      [290, 65, 310, 85]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "D"
+	      SrcPort		      1
+	      DstBlock		      "Derivative"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In_1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		Points			[0, 65]
+		DstBlock		"D"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 0]
+		Branch {
+		  Points		  [0, -50]
+		  DstBlock		  "Proportional"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Integral"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Derivative"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -55]
+	      DstBlock		      "Sum"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Integral"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Proportional"
+	      SrcPort		      1
+	      Points		      [65, 0; 0, 40]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PID Controller\n(with Approximate\nDerivati"
+"ve)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [35, 240, 65, 270]
+	  ShowPortLabels	  on
+	  MaskType		  "PID(2) Controller"
+	  MaskDescription	  "Enter Proportional(P), Integral(I), and Der"
+"ivative(D) and divisor (N) terms.\nP+I/s+Ds/(1/Ns+1)"
+	  MaskHelp		  "This block implements a PID controller wher"
+"e parameters are entered for the Proportional, Integral and Derivative and di"
+"visor terms. Unmask this block to see how it works. The derivative term is im"
+"plemented using an s/(s/N +1)  transfer function block. Making N large can cr"
+"eate a \"stiff\" system."
+	  MaskPromptString	  "Proportional:|Integral:|Derivative:|Derivat"
+"ive divisor(N):"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskVariables		  "P=@1;I=@2;D=@3;N=@4;"
+	  MaskDisplay		  "disp('PID')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|1|0|100"
+	  System {
+	    Name		    "PID Controller\n(with Approximate\nDeriva"
+"tive)"
+	    Location		    [70, 117, 395, 334]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In_1"
+	      Position		      [25, 65, 45, 85]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      TransferFcn
+	      Name		      "Derivative"
+	      Position		      [110, 120, 160, 160]
+	      Numerator		      "[D, 0]"
+	      Denominator	      "[1/N 1]"
+	    }
+	    Block {
+	      BlockType		      TransferFcn
+	      Name		      "Integral"
+	      Position		      [110, 57, 145, 93]
+	      Numerator		      "[I]"
+	      Denominator	      "[1 0]"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Proportional"
+	      Position		      [120, 13, 140, 37]
+	      Gain		      "P"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [245, 57, 265, 93]
+	      IconShape		      "rectangular"
+	      Inputs		      "+++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out_1"
+	      Position		      [290, 65, 310, 85]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Proportional"
+	      SrcPort		      1
+	      Points		      [65, 0; 0, 40]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Integral"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Derivative"
+	      SrcPort		      1
+	      Points		      [50, 0; 0, -55]
+	      DstBlock		      "Sum"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "In_1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		Points			[0, 0]
+		Branch {
+		  Points		  [0, -50]
+		  DstBlock		  "Proportional"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Integral"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, 65]
+		DstBlock		"Derivative"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out_1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "State-Space\n(with initial outputs)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [20, 162, 80, 198]
+	  ShowPortLabels	  on
+	  MaskType		  "State-Space with Initial Outputs"
+	  MaskDescription	  "State-Space model matrices:\ndx/dt = Ax + B"
+"u\ny=Cx +Du"
+	  MaskHelp		  "Specify an initial output.  An optimization"
+" routine is used to attempt to find the steady state x values that satisfy th"
+"e initial output.  The block states will be initialized to these values."
+	  MaskPromptString	  "A:|B:|C:|D:|Initial inputs:|Initial outputs"
+":"
+	  MaskStyleString	  "edit,edit,edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on,on,on"
+	  MaskCallbackString	  "|||||"
+	  MaskEnableString	  "on,on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on,on"
+	  MaskVariables		  "A=@1;B=@2;C=@3;D=@4;U0=@5;Y0=@6;"
+	  MaskInitialization	  "if (isempty(Y0));[m,n]=size(A);X0=zeros(1,m"
+"); end; if (isempty(U0));[m,p]=size(B);U0=zeros(1,p);end;X0=getxo(A,B,C,D,U0,"
+"Y0,0);"
+	  MaskDisplay		  "fprintf('x'' = Ax + Bu\\n  y = Cx + Du');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[-2.0479 -.4517;-.4517 -3.0295]|[.0591 0]'|"
+"[.2641 .8717]|0|1|.5"
+	  System {
+	    Name		    "State-Space\n(with initial outputs)"
+	    Location		    [674, 104, 894, 192]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      StateSpace
+	      Name		      "State-Space"
+	      Position		      [80, 27, 140, 63]
+	      A			      "A"
+	      B			      "B"
+	      C			      "C"
+	      D			      "D"
+	      X0		      "X0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [165, 38, 195, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "State-Space"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "State-Space"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Transfer Fcn\n(with initial outputs)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [130, 12, 190, 48]
+	  ShowPortLabels	  on
+	  MaskType		  "Transfer Function with Initial Outputs"
+	  MaskDescription	  "Vector expressions for numerator, and denom"
+"inator. Coefficients are in descending powers of s."
+	  MaskHelp		  "Specify the initial output for the transfer"
+" function.  An optimization routine attempts to determine the appropriate ini"
+"tial states so that the specified initial output is achieved.  For more detai"
+"ls, see the m-file getxo.m"
+	  MaskPromptString	  "Numerator:|Denominator:|Initial output:|Ini"
+"tial input:"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskVariables		  "N=@1;D=@2;Y0=@3;U0=@4;"
+	  MaskInitialization	  "[A,B,C,Dd]=tf2ss(N,D);if (isempty(Y0));[m,n"
+"]=size(A);X0=zeros(1,m); end; if (isempty(U0));[m,p]=size(B);U0=zeros(1,p);en"
+"d;X0=getxo(A,B,C,Dd,U0,Y0,0);\n"
+	  MaskDisplay		  "dpoly(N,D,'s')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[1]|[1  1]|.5|0"
+	  System {
+	    Name		    "Transfer Fcn\n(with initial outputs)"
+	    Location		    [664, 99, 884, 187]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      StateSpace
+	      Name		      "State Space"
+	      Position		      [80, 27, 140, 63]
+	      A			      "A"
+	      B			      "B"
+	      C			      "C"
+	      D			      "Dd"
+	      X0		      "X0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [165, 38, 195, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "State Space"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "State Space"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Transfer Fcn\n(with initial states)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [20, 12, 80, 48]
+	  ShowPortLabels	  on
+	  MaskType		  "Transfer Function with Initial States"
+	  MaskDescription	  "Vector expressions for numerator, and denom"
+"inator. Coefficients are in descending powers of s."
+	  MaskHelp		  "Specify the initial states for the transfer"
+" function.  The state ordering is determined by the m-file tf2ss.  There is n"
+"o unique mapping of the states in a transfer function to states in a state-sp"
+"ace representation.  However, tf2ss will consistently use the same mapping fo"
+"r a given transfer function.\n"
+	  MaskPromptString	  "Numerator:|Denominator:|Initial conditions:"
+	  MaskStyleString	  "edit,edit,edit"
+	  MaskTunableValueString  "on,on,on"
+	  MaskCallbackString	  "||"
+	  MaskEnableString	  "on,on,on"
+	  MaskVisibilityString	  "on,on,on"
+	  MaskVariables		  "N=@1;D=@2;X0=@3;"
+	  MaskInitialization	  "[A,B,C,Dd]=tf2ss(N,D);if (isempty(X0));[m,n"
+"]=size(A);X0=zeros(1,m); end;"
+	  MaskDisplay		  "dpoly(N,D,'s')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[1]|[1  1]|.5"
+	  System {
+	    Name		    "Transfer Fcn\n(with initial states)"
+	    Location		    [614, 74, 834, 162]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      StateSpace
+	      Name		      "State Space"
+	      Position		      [80, 27, 140, 63]
+	      A			      "A"
+	      B			      "B"
+	      C			      "C"
+	      D			      "Dd"
+	      X0		      "X0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [165, 38, 195, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      Points		      [5, 10]
+	      DstBlock		      "State Space"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "State Space"
+	      SrcPort		      1
+	      Points		      [5, 10]
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Zero-Pole\n(with initial outputs)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [130, 87, 190, 123]
+	  ShowPortLabels	  on
+	  MaskType		  "Zero-Pole with Initial Outputs"
+	  MaskDescription	  "Vector expressions for numerator, denominat"
+"or, and gain."
+	  MaskHelp		  "Specify the initial output for the zero-pol"
+"e-gain system.  An optimization routine attempts to determine the appropriate"
+" initial states so that the specified initial output is achieved.  For more d"
+"etails, see the m-file getxo.m"
+	  MaskPromptString	  "Zeros:|Poles:|Gain:|Initial output:|Initial"
+" input:"
+	  MaskStyleString	  "edit,edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on,on"
+	  MaskCallbackString	  "||||"
+	  MaskEnableString	  "on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on"
+	  MaskVariables		  "Z=@1;P=@2;K=@3;Y0=@4;U0=@5;"
+	  MaskInitialization	  "[A,B,C,D]=zp2ss(Z,P,K);if (isempty(Y0));[m,"
+"n]=size(A);X0=zeros(1,m); end; if (isempty(U0));[m,p]=size(B);U0=zeros(1,p);e"
+"nd;X0=getxo(A,B,C,D,U0,Y0,0);"
+	  MaskDisplay		  "droots(Z,P,K)"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[1]|[0; -1]|[1]|.5|0"
+	  System {
+	    Name		    "Zero-Pole\n(with initial outputs)"
+	    Location		    [679, 84, 899, 172]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      StateSpace
+	      Name		      "State Space"
+	      Position		      [80, 27, 140, 63]
+	      A			      "A"
+	      B			      "B"
+	      C			      "C"
+	      D			      "D"
+	      X0		      "X0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [165, 38, 195, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "State Space"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "State Space"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Zero-Pole\n(with initial states)"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [20, 87, 80, 123]
+	  ShowPortLabels	  on
+	  MaskType		  "Zero-Pole with Initial States"
+	  MaskDescription	  "Vector expressions for numerator, denominat"
+"or, and gain."
+	  MaskHelp		  "Specify the initial states for the transfer"
+" function.  The state ordering is determined by the m-file zp2ss.  There is n"
+"o unique mapping of the states in a zero-pole-gain representation to states i"
+"n a state-space representation.  However, zp2ss will consistently use the sam"
+"e mapping for a given transfer function."
+	  MaskPromptString	  "Zeros:|Poles:|Gain:|Initial conditions:"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskVariables		  "Z=@1;P=@2;K=@3;X0=@4;"
+	  MaskInitialization	  "[A,B,C,D]=zp2ss(Z,P,K);if (isempty(X0));[m,"
+"n]=size(A);X0=zeros(1,m); end;"
+	  MaskDisplay		  "droots(Z,P,K)"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[1]|[0; -1]|[1]|.5"
+	  System {
+	    Name		    "Zero-Pole\n(with initial states)"
+	    Location		    [684, 114, 904, 202]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 38, 55, 52]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      StateSpace
+	      Name		      "State Space"
+	      Position		      [80, 27, 140, 63]
+	      A			      "A"
+	      B			      "B"
+	      C			      "C"
+	      D			      "D"
+	      X0		      "X0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [165, 38, 195, 52]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "State Space"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "State Space"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Additional\nSinks"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [22, 22, 72, 72]
+      ShowPortLabels	      on
+      MaskDisplay	      "plot([-1 1 1 -1 1],[ 1 -1 1 -1 1],[14 4 11 4 6]"
+",[14 4 6 4 11],[14 4 11 4 6],[-14 -4 -6 -4 -11],[-14 -4 -11 -4 -6],[14 4 6 4 "
+"11],[-14 -4 -11 -4 -6],[-14 -4 -6 -4 -11],\n[0 0 3 0 -3],[-20 -5 -10 -5 -10],"
+"[0 0 3 0 -3],[20 5 10 5 10],[20 5 10 5 10],[0 0 3 0 -3],[-20 -5 -10 -5 -10],["
+"0 0 3 0 -3])                                            "
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Additional\nSinks"
+	Location		[181, 602, 652, 890]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Auto\nCorrelator"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [115, 170, 145, 200]
+	  CopyFcn		  "sfuncorr([],[],[],'CopyBlock')"
+	  DeleteFcn		  "sfuncorr([],[],[],'DeleteBlock')"
+	  LoadFcn		  "sfuncorr([],[],[],'LoadBlock')"
+	  StartFcn		  "sfuncorr([],[],[],'Start')"
+	  NameChangeFcn		  "sfuncorr([],[],[],'NameChange')"
+	  ShowPortLabels	  on
+	  MaskType		  "Auto Correlator"
+	  MaskDescription	  "Auto correlator using graph window.\nRequir"
+"es signal processing toolbox."
+	  MaskHelp		  "This block when hooked to the output of a s"
+"ystem displays the auto correlation of the buffer in the graph window. For mo"
+"re see the M-file sfuncorr."
+	  MaskPromptString	  "Length of buffer:|Plot after how many point"
+"s:|Sample time:"
+	  MaskStyleString	  "edit,edit,edit"
+	  MaskTunableValueString  "on,on,on"
+	  MaskCallbackString	  "||"
+	  MaskEnableString	  "on,on,on"
+	  MaskVisibilityString	  "on,on,on"
+	  MaskVariables		  "npts=@1;HowOften=@2;sampleT=@3;"
+	  MaskInitialization	  " ts=sampleT(1); if length(sampleT) > 1, off"
+"set = sampleT(2);, else, offset = 0; end"
+	  MaskDisplay		  "plot(0,0,100,100,[11,93,93,11,11],[90,90,40"
+",40,90],[80,60,40,20],[50,79,50,80])"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "100|50|0.1"
+	  System {
+	    Name		    "Auto\nCorrelator"
+	    Location		    [92, 139, 430, 257]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "input signal"
+	      Position		      [50, 55, 70, 75]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "sfuncorr"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [160, 48, 225, 82]
+	      FunctionName	      "sfuncorr"
+	      Parameters	      "npts,HowOften,offset,ts,0,'unbiased'"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Line {
+	      SrcBlock		      "input signal"
+	      SrcPort		      1
+	      DstBlock		      "sfuncorr"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Averaging\nPower Spectral\nDensity"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [115, 15, 145, 45]
+	  CopyFcn		  "sfunpsd([],[],[],'CopyBlock')"
+	  DeleteFcn		  "sfunpsd([],[],[],'DeleteBlock')"
+	  LoadFcn		  "sfunpsd([],[],[],'LoadBlock')"
+	  StartFcn		  "sfunpsd([],[],[],'Start')"
+	  NameChangeFcn		  "sfunpsd([],[],[],'NameChange')"
+	  ShowPortLabels	  on
+	  MaskType		  "Spectrum Analyzer"
+	  MaskDescription	  "Spectrum analyzer using graph window."
+	  MaskHelp		  "This block when hooked to the output of a s"
+"ystem displays the frequency content of the buffer in the graph window. For m"
+"ore see the M-file sfunpsd."
+	  MaskPromptString	  "Length of buffer:|Number of points for fft:"
+"|Plot after how many points:|Sample time:"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskVariables		  "npts=@1;fftpts=@2;HowOften=@3;sampleT=@4;"
+	  MaskInitialization	  " ts=sampleT(1); if length(sampleT) > 1, off"
+"set = sampleT(2);, else, offset = 0; end"
+	  MaskDisplay		  "plot(0,0,100,100,[11,92,92,11,11],[90,90,40"
+",40,90],[82,76,65,57,51,44,35,30,25,20],[65,62,59,63,66,66,67,70,55,50])"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "128|512|64|0.1"
+	  System {
+	    Name		    "Averaging\nPower Spectral\nDensity"
+	    Location		    [27, 451, 274, 577]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "input signal"
+	      Position		      [45, 45, 65, 65]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "sfunpsd"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [130, 36, 180, 74]
+	      FunctionName	      "sfunpsd"
+	      Parameters	      "fftpts,npts,HowOften,offset,ts,1"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Line {
+	      SrcBlock		      "input signal"
+	      SrcPort		      1
+	      DstBlock		      "sfunpsd"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Averaging\nSpectrum\nAnalyzer"
+	  Ports			  [2, 0, 0, 0, 0]
+	  Position		  [115, 92, 145, 123]
+	  ShowPortLabels	  on
+	  MaskType		  "Spectrum Analyzer"
+	  MaskDescription	  "Spectrum analyser using graph window.\nHook"
+" input 1 to system input.\nHook input 2 to system output."
+	  MaskHelp		  "Hook the system's input to the first port o"
+"f this block and the system's output to second port. Results are displayed as"
+" the frequency response of this system. Use signals with high harmonic conten"
+"t for best results. "
+	  MaskPromptString	  "Length of buffer:|Number of points for fft:"
+"|Plot after how many points:|Sample time:"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskVariables		  "npts=@1;fftpts=@2;HowOften=@3;sampleT=@4;"
+	  MaskInitialization	  " ts=sampleT(1); if length(sampleT) > 1, off"
+"set = sampleT(2);, else, offset = 0; end"
+	  MaskDisplay		  "plot(0,0,100,100,[12,92,92,12,12],[90,90,40"
+",40,90],[80,72,63,54,47,40,32,20],[61,61,62,65,69,73,75,75])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "256|256|64|0.1"
+	  System {
+	    Name		    "Averaging\nSpectrum\nAnalyzer"
+	    Location		    [180, 227, 525, 410]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "system input"
+	      Position		      [35, 35, 55, 55]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "system output"
+	      Position		      [35, 115, 55, 135]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [125, 76, 155, 109]
+	      Inputs		      "2"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "sfuntf"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [200, 77, 245, 113]
+	      FunctionName	      "sfuntf"
+	      Parameters	      "fftpts,npts,HowOften,offset,ts,1"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "sfuntf"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "system input"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 40]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "system output"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, -25]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Cross\nCorrelator"
+	  Ports			  [2, 0, 0, 0, 0]
+	  Position		  [30, 167, 60, 198]
+	  CopyFcn		  "sfuncorr([],[],[],'CopyBlock')"
+	  DeleteFcn		  "sfuncorr([],[],[],'DeleteBlock')"
+	  LoadFcn		  "sfuncorr([],[],[],'LoadBlock')"
+	  StartFcn		  "sfuncorr([],[],[],'Start')"
+	  NameChangeFcn		  "sfuncorr([],[],[],'NameChange')"
+	  ShowPortLabels	  on
+	  MaskType		  "Cross Correlator"
+	  MaskDescription	  "Cross correlator using graph window.\nRequi"
+"res signal processing toolbox."
+	  MaskHelp		  "This block when hooked to the outputs of a "
+"system displays the cross correlation of the buffer in the graph window. For "
+"more see the M-file sfuncorr."
+	  MaskPromptString	  "Length of buffer:|Plot after how many point"
+"s:|Sample time:"
+	  MaskStyleString	  "edit,edit,edit"
+	  MaskTunableValueString  "on,on,on"
+	  MaskCallbackString	  "||"
+	  MaskEnableString	  "on,on,on"
+	  MaskVisibilityString	  "on,on,on"
+	  MaskVariables		  "npts=@1;HowOften=@2;sampleT=@3;"
+	  MaskInitialization	  " ts=sampleT(1); if length(sampleT) > 1, off"
+"set = sampleT(2);, else, offset = 0; end"
+	  MaskDisplay		  "plot(0,0,100,100,[10,92,92,10,10],[90,90,40"
+",40,90],[80,59,40,20],[70,79,70,79],[79,70,59,51,40,30,21],[60,51,60,50,60,50"
+",60])"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "100|50|0.1"
+	  System {
+	    Name		    "Cross\nCorrelator"
+	    Location		    [48, 95, 445, 294]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "signal 1"
+	      Position		      [50, 55, 70, 75]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "signal 2"
+	      Position		      [50, 105, 70, 125]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [150, 81, 180, 114]
+	      Inputs		      "2"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "sfuncorr"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [225, 83, 290, 117]
+	      FunctionName	      "sfuncorr"
+	      Parameters	      "npts,HowOften,offset,ts,1,'unbiased'"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Line {
+	      SrcBlock		      "signal 1"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 25]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "signal 2"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, -10]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "sfuncorr"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Power Spectral\nDensity"
+	  Ports			  [1, 0, 0, 0, 0]
+	  Position		  [30, 15, 60, 45]
+	  CopyFcn		  "sfunpsd([],[],[],'CopyBlock')"
+	  DeleteFcn		  "sfunpsd([],[],[],'DeleteBlock')"
+	  LoadFcn		  "sfunpsd([],[],[],'LoadBlock')"
+	  StartFcn		  "sfunpsd([],[],[],'Start')"
+	  NameChangeFcn		  "sfunpsd([],[],[],'NameChange')"
+	  ShowPortLabels	  on
+	  MaskType		  "Spectrum Analyzer"
+	  MaskDescription	  "Spectrum analyser using graph window."
+	  MaskHelp		  "This block when hooked to the output of a s"
+"ystem displays the frequency content of the buffer in the graph window. For m"
+"ore see the M-file sfunpsd."
+	  MaskPromptString	  "Length of buffer:|Number of points for fft:"
+"|Plot after how many points:|Sample time:"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskVariables		  "npts=@1;fftpts=@2;HowOften=@3;sampleT=@4;"
+	  MaskInitialization	  " ts=sampleT(1); if length(sampleT) > 1, off"
+"set = sampleT(2);, else, offset = 0; end"
+	  MaskDisplay		  "plot(0,0,100,100,[14,91,91,14,14],[86,86,40"
+",40,86],[85,82,80,79,75,67,63,60,57,53,41,36,33,27,24],[49,50,53,50,49,51,54,"
+"66,54,50,50,52,81,51,49])"
+	  MaskSelfModifiable	  on
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "128|512|64|0.1"
+	  System {
+	    Name		    "Power Spectral\nDensity"
+	    Location		    [136, 183, 454, 323]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "input signal"
+	      Position		      [50, 55, 70, 75]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "sfunpsd"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [160, 46, 210, 84]
+	      FunctionName	      "sfunpsd"
+	      Parameters	      "fftpts,npts,HowOften,offset,ts,0"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Line {
+	      SrcBlock		      "input signal"
+	      SrcPort		      1
+	      DstBlock		      "sfunpsd"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Spectrum\nAnalyzer"
+	  Ports			  [2, 0, 0, 0, 0]
+	  Position		  [30, 92, 60, 123]
+	  ShowPortLabels	  on
+	  MaskType		  "Spectrum Analyzer"
+	  MaskDescription	  "Spectrum analyser using graph window.\nHook"
+" input 1 to system input.\nHook input 2 to system output."
+	  MaskHelp		  "Hook the system's input to the first port o"
+"f this block and the system's output to second port. Results are displayed as"
+" the frequency response of this system. Use signals with high harmonic conten"
+"t for best results. "
+	  MaskPromptString	  "Length of buffer:|Number of points for fft:"
+"|Plot after how many points:|Sample time:"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskVariables		  "npts=@1;fftpts=@2;HowOften=@3;sampleT=@4;"
+	  MaskInitialization	  " ts=sampleT(1); if length(sampleT) > 1, off"
+"set = sampleT(2);, else, offset = 0; end"
+	  MaskDisplay		  "plot(0,0,100,100,[11,93,93,11,11],[90,90,40"
+",40,90],[90,80,72,64,55,45,41,36,20],[50,50,52,59,67,75,78,80,80])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "256|256|64|0.1"
+	  System {
+	    Name		    "Spectrum\nAnalyzer"
+	    Location		    [224, 271, 595, 456]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "system input"
+	      Position		      [55, 30, 75, 50]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "system output"
+	      Position		      [55, 110, 75, 130]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [145, 71, 175, 104]
+	      Inputs		      "2"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "sfuntf"
+	      Ports		      [1, 1, 0, 0, 0]
+	      Position		      [225, 72, 270, 108]
+	      FunctionName	      "sfuntf"
+	      Parameters	      "fftpts,npts,HowOften,offset,ts,0"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Line {
+	      SrcBlock		      "system output"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, -25]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "system input"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 40]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "sfuntf"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Flip Flops"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [284, 22, 334, 72]
+      ShowPortLabels	      on
+      System {
+	Name			"Flip Flops"
+	Location		[309, 241, 689, 404]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Clock"
+	  Ports			  [0, 1, 0, 0, 0]
+	  Position		  [15, 41, 55, 69]
+	  ShowPortLabels	  on
+	  MaskType		  "Digital clock"
+	  MaskDescription	  "Digital clock.\nOutput is set to 1 for the "
+"first half of the period."
+	  MaskHelp		  "Digital clock for logic systems."
+	  MaskPromptString	  "Period:"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "on"
+	  MaskVisibilityString	  "on"
+	  MaskInitialization	  "duration = @1/2;"
+	  MaskDisplay		  "plot(0,0,100,100,[90,75,75,60,60,35,35,20,2"
+"0,10],[20,20,80,80,19,20,80,80,20,20])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "2"
+	  System {
+	    Name		    "Clock"
+	    Location		    [471, 305, 755, 434]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [25, 25, 45, 45]
+	      Value		      "1"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [115, 30, 135, 50]
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay"
+	      Position		      [125, 80, 175, 100]
+	      Orientation	      "left"
+	      X0		      "0"
+	      SampleTime	      "duration"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      Position		      [240, 30, 260, 50]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay"
+	      SrcPort		      1
+	      Points		      [-35, 0; 0, -45]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      Branch {
+		DstBlock		"out_1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"Unit Delay"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "D Flip-Flop"
+	  Ports			  [3, 2, 0, 0, 0]
+	  Position		  [230, 17, 275, 93]
+	  ShowPortLabels	  on
+	  MaskType		  "DFlipFlop"
+	  MaskDescription	  "D Flip Flop Block"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "D Flip-Flop"
+	    Location		    [525, 445, 758, 616]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "D"
+	      Position		      [35, 98, 65, 112]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CLK"
+	      Position		      [115, 30, 145, 45]
+	      Orientation	      "down"
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "!CLR"
+	      Position		      [74, 30, 106, 45]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	      Port		      "3"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "D Flip-Flop"
+	      Ports		      [1, 2, 1, 1, 0]
+	      Position		      [90, 65, 130, 140]
+	      ShowPortLabels	      on
+	      System {
+		Name			"D Flip-Flop"
+		Location		[787, 463, 1058, 610]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "D"
+		  Position		  [25, 55, 45, 75]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "C"
+		  Ports			  [0, 0, 0, 0, 0]
+		  Position		  [15, 15, 35, 35]
+		  StatesWhenEnabling	  "held"
+		  ShowOutputPort	  off
+		}
+		Block {
+		  BlockType		  TriggerPort
+		  Name			  "Trigger"
+		  Ports			  [0, 0, 0, 0, 0]
+		  Position		  [55, 15, 75, 35]
+		  TriggerType		  "rising"
+		  ShowOutputPort	  off
+		  OutputDataType	  "auto"
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logic"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [135, 93, 165, 117]
+		  Operator		  "NOT"
+		  Inputs		  "1"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Q"
+		  Position		  [205, 55, 225, 75]
+		  Port			  "1"
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "!Q"
+		  Position		  [205, 95, 225, 115]
+		  Port			  "2"
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "1"
+		}
+		Line {
+		  SrcBlock		  "Logic"
+		  SrcPort		  1
+		  DstBlock		  "!Q"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "D"
+		  SrcPort		  1
+		  Points		  [45, 0]
+		  Branch {
+		    DstBlock		    "Q"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Logic"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Q"
+	      Position		      [155, 78, 185, 92]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "!Q"
+	      Position		      [155, 113, 185, 127]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "1"
+	    }
+	    Line {
+	      SrcBlock		      "CLK"
+	      SrcPort		      1
+	      DstBlock		      "D Flip-Flop"
+	      DstPort		      trigger
+	    }
+	    Line {
+	      SrcBlock		      "!CLR"
+	      SrcPort		      1
+	      DstBlock		      "D Flip-Flop"
+	      DstPort		      enable
+	    }
+	    Line {
+	      SrcBlock		      "D Flip-Flop"
+	      SrcPort		      1
+	      DstBlock		      "Q"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "D"
+	      SrcPort		      1
+	      DstBlock		      "D Flip-Flop"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "D Flip-Flop"
+	      SrcPort		      2
+	      DstBlock		      "!Q"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "D Latch"
+	  Ports			  [2, 2, 0, 0, 0]
+	  Position		  [80, 15, 125, 90]
+	  ShowPortLabels	  on
+	  MaskType		  "DLatch"
+	  MaskDescription	  "D Latch Flip Flop Block"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "D Latch"
+	    Location		    [516, 424, 730, 599]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "D"
+	      Position		      [25, 83, 55, 97]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "C"
+	      Position		      [80, 15, 110, 30]
+	      Orientation	      "down"
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "D Latch"
+	      Ports		      [1, 2, 1, 0, 0]
+	      Position		      [75, 51, 115, 124]
+	      ShowPortLabels	      on
+	      System {
+		Name			"D Latch"
+		Location		[756, 470, 1027, 609]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "D"
+		  Position		  [25, 55, 45, 75]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "C"
+		  Ports			  [0, 0, 0, 0, 0]
+		  Position		  [15, 15, 35, 35]
+		  StatesWhenEnabling	  "held"
+		  ShowOutputPort	  off
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logic"
+		  Ports			  [1, 1, 0, 0, 0]
+		  Position		  [135, 93, 165, 117]
+		  Operator		  "NOT"
+		  Inputs		  "1"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Q"
+		  Position		  [205, 55, 225, 75]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "!Q"
+		  Position		  [205, 95, 225, 115]
+		  Port			  "2"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "1"
+		}
+		Line {
+		  SrcBlock		  "D"
+		  SrcPort		  1
+		  Points		  [50, 0]
+		  Branch {
+		    Points		    [0, 40]
+		    DstBlock		    "Logic"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Q"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Logic"
+		  SrcPort		  1
+		  DstBlock		  "!Q"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Q"
+	      Position		      [140, 63, 170, 77]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "!Q"
+	      Position		      [140, 98, 170, 112]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "1"
+	    }
+	    Line {
+	      SrcBlock		      "D Latch"
+	      SrcPort		      2
+	      DstBlock		      "!Q"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "D"
+	      SrcPort		      1
+	      DstBlock		      "D Latch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "D Latch"
+	      SrcPort		      1
+	      DstBlock		      "Q"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "C"
+	      SrcPort		      1
+	      DstBlock		      "D Latch"
+	      DstPort		      enable
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "J-K\nFlip-Flop"
+	  Ports			  [3, 2, 0, 0, 0]
+	  Position		  [305, 17, 350, 93]
+	  ShowPortLabels	  on
+	  MaskType		  "JKFlipFlop"
+	  MaskDescription	  "J-K Flip Flop Block (Negative Edge Triggere"
+"d)"
+	  MaskPromptString	  "Initial condition:"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "on"
+	  MaskVisibilityString	  "on"
+	  MaskVariables		  "initial_condition=@1;"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "0"
+	  System {
+	    Name		    "J-K\nFlip-Flop"
+	    Location		    [263, 469, 463, 651]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "J"
+	      Position		      [25, 63, 55, 77]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CLK"
+	      Position		      [85, 15, 115, 30]
+	      Orientation	      "down"
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "K"
+	      Position		      [25, 98, 55, 112]
+	      Port		      "3"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "J-K\nFlip-Flop"
+	      Ports		      [2, 2, 0, 1, 0]
+	      Position		      [80, 51, 120, 124]
+	      ShowPortLabels	      on
+	      System {
+		Name			"J-K\nFlip-Flop"
+		Location		[545, 494, 847, 702]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		ZoomFactor		"100"
+		AutoZoom		on
+		Block {
+		  BlockType		  Inport
+		  Name			  "J"
+		  Position		  [25, 110, 45, 130]
+		  Port			  "1"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "K"
+		  Position		  [25, 150, 45, 170]
+		  Port			  "2"
+		  PortWidth		  "-1"
+		  SampleTime		  "-1"
+		  DataType		  "auto"
+		  SignalType		  "auto"
+		  Interpolate		  on
+		}
+		Block {
+		  BlockType		  TriggerPort
+		  Name			  "Trigger"
+		  Ports			  [0, 0, 0, 0, 0]
+		  Position		  [20, 15, 40, 35]
+		  TriggerType		  "falling"
+		  ShowOutputPort	  off
+		  OutputDataType	  "auto"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux"
+		  Ports			  [1, 2, 0, 0, 0]
+		  Position		  [175, 70, 180, 165]
+		  BackgroundColor	  "black"
+		  Outputs		  "2"
+		}
+		Block {
+		  BlockType		  CombinatorialLogic
+		  Name			  "Logic"
+		  Position		  [120, 104, 150, 136]
+		  TruthTable		  "[0 1; 0 1; 1 0; 1 0; 1 0; 0 1; 1 0;"
+" 0 1]"
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "Memory"
+		  Position		  [120, 25, 160, 55]
+		  Orientation		  "left"
+		  X0			  "initial_condition"
+		  InheritSampleTime	  on
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  Ports			  [3, 1, 0, 0, 0]
+		  Position		  [90, 59, 95, 181]
+		  Inputs		  "3"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Q"
+		  Position		  [255, 85, 275, 105]
+		  Port			  "1"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "initial_condition"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "!Q"
+		  Position		  [255, 130, 275, 150]
+		  Port			  "2"
+		  OutputWhenDisabled	  "held"
+		  InitialOutput		  "~initial_condition"
+		}
+		Line {
+		  SrcBlock		  "J"
+		  SrcPort		  1
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "K"
+		  SrcPort		  1
+		  DstBlock		  "Mux"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Memory"
+		  SrcPort		  1
+		  Points		  [-55, 0; 0, 40]
+		  DstBlock		  "Mux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  1
+		  Points		  [25, 0]
+		  Branch {
+		    DstBlock		    "Q"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -55]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  2
+		  DstBlock		  "!Q"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Logic"
+		  SrcPort		  1
+		  DstBlock		  "Demux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "Logic"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Q"
+	      Position		      [145, 63, 175, 77]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "!Q"
+	      Position		      [145, 98, 175, 112]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "J-K\nFlip-Flop"
+	      SrcPort		      2
+	      DstBlock		      "!Q"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "K"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "J"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "J-K\nFlip-Flop"
+	      SrcPort		      1
+	      DstBlock		      "Q"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "CLK"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop"
+	      DstPort		      trigger
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "S-R\nFlip-Flop"
+	  Ports			  [2, 2, 0, 0, 0]
+	  Position		  [155, 15, 200, 90]
+	  ShowPortLabels	  on
+	  MaskType		  "SRFlipFlop"
+	  MaskDescription	  "S-R Flip Flop Block\n"
+	  MaskPromptString	  "Initial condition:"
+	  MaskStyleString	  "edit"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "on"
+	  MaskVisibilityString	  "on"
+	  MaskVariables		  "initial_condition=@1;"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "0"
+	  System {
+	    Name		    "S-R\nFlip-Flop"
+	    Location		    [519, 396, 821, 598]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "S"
+	      Position		      [25, 105, 45, 125]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "R"
+	      Position		      [25, 145, 45, 165]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 2, 0, 0, 0]
+	      Position		      [175, 66, 180, 159]
+	      Outputs		      "2"
+	    }
+	    Block {
+	      BlockType		      CombinatorialLogic
+	      Name		      "Logic"
+	      Position		      [115, 99, 145, 131]
+	      TruthTable	      "[0 1;0 1;1 0;0 1;1 0;0 1;1 0;1 0]"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      Position		      [115, 25, 155, 55]
+	      Orientation	      "left"
+	      X0		      "initial_condition"
+	      InheritSampleTime	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [3, 1, 0, 0, 0]
+	      Position		      [90, 54, 95, 176]
+	      Inputs		      "3"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Q"
+	      Position		      [255, 80, 275, 100]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "!Q"
+	      Position		      [255, 125, 275, 145]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "1"
+	    }
+	    Line {
+	      SrcBlock		      "R"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "S"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      Points		      [-50, 0; 0, 35]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		Points			[0, -50]
+		DstBlock		"Memory"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Q"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "!Q"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logic"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Logic"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Annotation {
+	  Position		  [188, 138]
+	  Text			  "Note: J-K Flip-Flop is Negative-Edge-Trigge"
+"red"
+	  FontSize		  12
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Linearization"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [349, 22, 399, 72]
+      ShowPortLabels	      on
+      System {
+	Name			"Linearization"
+	Location		[374, 241, 615, 546]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Switched\nderivative for\nlinearization"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [80, 57, 155, 113]
+	  ShowPortLabels	  on
+	  MaskType		  "Derivative for linearization"
+	  MaskDescription	  "Switched derivative with proper transfer fu"
+"nction approximation for linearization."
+	  MaskHelp		  "This block should be used in place of the d"
+"erivative when you are linearizing the model. It approximates the derivative "
+"with a proper transfer function."
+	  MaskPromptString	  "Switch value (1 for linearization, 0 for si"
+"mulation):|Derivative constant  Ns/(s+N):"
+	  MaskStyleString	  "edit,edit"
+	  MaskTunableValueString  "on,on"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,on"
+	  MaskVariables		  "switchVal=@1;derivConst=@2;"
+	  MaskInitialization	  " num = [derivConst,0]; den = [1, derivConst"
+"];\n"
+	  MaskDisplay		  "disp('du/dt')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "0|100"
+	  System {
+	    Name		    "Switched\nderivative for\nlinearization"
+	    Location		    [427, 432, 916, 697]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [15, 123, 45, 137]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Derivative
+	      Name		      "Derivative"
+	      Position		      [245, 165, 275, 185]
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [340, 120, 360, 140]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Switch"
+	      Position		      [95, 72, 205, 108]
+	      ShowName		      off
+	      Gain		      "switchVal"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      TransferFcn
+	      Name		      "Transfer function\napproximation"
+	      Position		      [240, 69, 290, 111]
+	      Numerator		      "num "
+	      Denominator	      "den"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "~ switch"
+	      Position		      [95, 157, 210, 193]
+	      ShowName		      off
+	      Gain		      "real(~switchVal)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [410, 123, 440, 137]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		DstBlock		"~ switch"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Switch"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Transfer function\napproximation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "~ switch"
+	      SrcPort		      1
+	      DstBlock		      "Derivative"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Derivative"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Transfer function\napproximation"
+	      SrcPort		      1
+	      Points		      [55, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Switched\ntransport delay\nfor linearizatio"
+"n"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [80, 173, 160, 227]
+	  ShowPortLabels	  off
+	  MaskType		  "Delay for linearization."
+	  MaskDescription	  "Switched tranpsort delay with pade\napproxi"
+"mation for linearization."
+	  MaskHelp		  "This block should be used in place of the t"
+"ransport delay when you are linearizing the model. It uses a pade approximati"
+"on duirng linearization.\nSee the pade command for more information."
+	  MaskPromptString	  "Time delay:|Initial input:|Switch (1 for li"
+"nearization, 0 for simulation):|Pade order (for linearization):|Code generati"
+"on storage buffer size:"
+	  MaskStyleString	  "edit,edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on,on"
+	  MaskCallbackString	  "||||"
+	  MaskEnableString	  "on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on"
+	  MaskVariables		  "delay=@1;u0=@2;switchVal=@3;order=@4;Npts=@"
+"5;"
+	  MaskInitialization	  "[num, den] = padecoef(delay, order);"
+	  MaskDisplay		  "disp('Transport\\nDelay')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "1|0|0|2|1024"
+	  System {
+	    Name		    "Switched\ntransport delay\nfor linearizat"
+"ion"
+	    Location		    [131, 268, 608, 527]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [25, 123, 55, 137]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      TransferFcn
+	      Name		      "Pade\napproximation"
+	      Position		      [280, 69, 330, 111]
+	      Numerator		      "num "
+	      Denominator	      "den"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [350, 120, 370, 140]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Switch"
+	      Position		      [120, 73, 235, 107]
+	      ShowName		      off
+	      Gain		      "switchVal"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      TransportDelay
+	      Name		      "Transport\ndelay"
+	      Position		      [280, 160, 325, 190]
+	      DelayTime		      "delay"
+	      InitialInput	      "u0"
+	      BufferSize	      "Npts"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "~ Switch"
+	      Position		      [120, 158, 235, 192]
+	      ShowName		      off
+	      Gain		      "real(~switchVal)"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [405, 123, 435, 137]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "~ Switch"
+	      SrcPort		      1
+	      DstBlock		      "Transport\ndelay"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Pade\napproximation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Transport\ndelay"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Pade\napproximation"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		Points			[0, 45]
+		DstBlock		"~ Switch"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -40]
+		DstBlock		"Switch"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Annotation {
+	  Position		  [86, 25]
+	  Text			  "Block for use with linmod:"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Transformations"
+      Ports		      [0, 0, 0, 0, 0]
+      Position		      [219, 22, 269, 72]
+      ShowPortLabels	      on
+      System {
+	Name			"Transformations"
+	Location		[244, 241, 403, 532]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Cartesian to\nPolar"
+	  Ports			  [2, 2, 0, 0, 0]
+	  Position		  [95, 17, 125, 48]
+	  ShowPortLabels	  on
+	  MaskType		  "Cart2Polar"
+	  MaskDescription	  "Transformation from cartesian to polar coor"
+"dinates.\n[x, y] -> [r, theta]\n\nr = sqrt(x^2 + y^2);\ntheta = atan(y/x);"
+	  MaskHelp		  "Unmask this block for more help."
+	  MaskDisplay		  "plot(0,0,100,100,[24,20,15,20,20],[85,95,85"
+",95,20],[80,20,95,85,95,85],[70,20,20,15,20,24],[56,56,55,52,50,46],[20,26,31"
+",35,38,42])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Cartesian to\nPolar"
+	    Location		    [136, 183, 495, 389]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "x"
+	      Position		      [20, 70, 40, 90]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "y"
+	      Position		      [20, 129, 40, 151]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [75, 96, 105, 129]
+	      Inputs		      "2"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "x->r"
+	      Position		      [155, 72, 260, 98]
+	      Expr		      "hypot(u[1],u[2])"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "x->theta"
+	      Position		      [160, 129, 265, 151]
+	      Expr		      "atan2(u[2],u[1])"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r"
+	      Position		      [295, 75, 315, 95]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "theta"
+	      Position		      [295, 130, 315, 150]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "x->theta"
+	      SrcPort		      1
+	      DstBlock		      "theta"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "y"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "x"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "x->r"
+	      SrcPort		      1
+	      DstBlock		      "r"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 0]
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"x->r"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"x->theta"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Cartesian to\nSpherical"
+	  Ports			  [3, 3, 0, 0, 0]
+	  Position		  [95, 90, 125, 120]
+	  ShowPortLabels	  on
+	  MaskType		  "Cart2Sph"
+	  MaskDescription	  "Transformation from cartesian to spherical "
+"coordinates.\n[x, y, z] -> [r, theta, phi]\n\np = hypot(x,y); r = hypot(p,z);"
+"\ntheta = atan(y/x);\nphi = atan(p/z);"
+	  MaskHelp		  "Unmask this block for more help."
+	  MaskDisplay		  "plot(0,0,100,100,[45,40,35,40,40],[85,95,85"
+",95,30],[22,10,14,10,40,95,85,95,85],[12,10,20,10,30,30,25,30,35],[70,40],[80"
+",30],[54,52,50,47,44,40],[53,55,56,58,59,59])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Cartesian to\nSpherical"
+	    Location		    [224, 271, 847, 655]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "x"
+	      Position		      [20, 70, 40, 90]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "y"
+	      Position		      [20, 114, 40, 136]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "z"
+	      Position		      [195, 154, 215, 176]
+	      Port		      "3"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [75, 97, 105, 133]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux1"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [295, 107, 325, 143]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "calc phi"
+	      Position		      [395, 189, 500, 211]
+	      Expr		      "atan2(u[2],u[1])"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "calc r"
+	      Position		      [395, 112, 500, 138]
+	      Expr		      "hypot(u[1],u[2])"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "calc theta"
+	      Position		      [395, 264, 500, 286]
+	      Expr		      "atan2(u[1],u[2])"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "temp"
+	      Position		      [155, 102, 260, 128]
+	      Expr		      "hypot(u[1],u[2])"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "r "
+	      Position		      [560, 115, 580, 135]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "theta"
+	      Position		      [560, 190, 580, 210]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "phi"
+	      Position		      [560, 265, 580, 285]
+	      Port		      "3"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Mux1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"calc r"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 150]
+		DstBlock		"calc theta"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"temp"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 85]
+		DstBlock		"calc phi"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "calc r"
+	      SrcPort		      1
+	      DstBlock		      "r "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "z"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, -30]
+	      DstBlock		      "Mux1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "temp"
+	      SrcPort		      1
+	      DstBlock		      "Mux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "x"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "y"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "calc theta"
+	      SrcPort		      1
+	      DstBlock		      "phi"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "calc phi"
+	      SrcPort		      1
+	      DstBlock		      "theta"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Celsius to\nFahrenheit"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [95, 160, 125, 190]
+	  ShowPortLabels	  on
+	  MaskType		  "CelsiusToFahrenheit"
+	  MaskDescription	  "Conversion from degrees Celsius to degrees "
+"Fahrenheit.\n\nF=9/5*C+32"
+	  MaskHelp		  "This block converts from degrees Celsius to"
+" degrees Fahrenheit."
+	  MaskDisplay		  "disp('C2F')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Celsius to\nFahrenheit"
+	    Location		    [340, 553, 580, 636]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Celsius\nin"
+	      Position		      [15, 15, 35, 35]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [95, 30, 115, 50]
+	      ShowName		      off
+	      Value		      "32"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [60, 7, 95, 43]
+	      ShowName		      off
+	      Gain		      "9/5"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [140, 15, 160, 50]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "++"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Fahrenheit\nout"
+	      Position		      [180, 25, 200, 45]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Fahrenheit\nout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Celsius\nin"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Degrees to\nRadians"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [20, 225, 50, 255]
+	  ShowPortLabels	  on
+	  MaskType		  "DegreesToRadians"
+	  MaskDescription	  "Conversion from Degrees to Radians.\n\nR=pi"
+"/180*D"
+	  MaskHelp		  "This block converts from Degrees to Radians"
+"."
+	  MaskDisplay		  "disp('D2R')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Degrees to\nRadians"
+	    Location		    [263, 524, 470, 605]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Degrees\nin"
+	      Position		      [20, 25, 40, 45]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [70, 15, 120, 55]
+	      ShowName		      off
+	      Gain		      "pi/180"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Radians\nout"
+	      Position		      [145, 25, 165, 45]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Degrees\nin"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Radians\nout"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Fahrenheit\nto Celsius"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [20, 160, 50, 190]
+	  ShowPortLabels	  on
+	  MaskType		  "FahrenheitToCelsius"
+	  MaskDescription	  "Conversion from degrees Fahrenheit to degre"
+"es Celsius.\n\nC=5/9*(F-32);"
+	  MaskHelp		  "This block converts from degrees Fahrenheit"
+" to degrees Celsius."
+	  MaskDisplay		  "disp('F2C')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Fahrenheit\nto Celsius"
+	    Location		    [267, 546, 509, 627]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Fahrenheit\nin"
+	      Position		      [20, 15, 40, 35]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [65, 30, 85, 50]
+	      ShowName		      off
+	      Value		      "32"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [145, 17, 180, 53]
+	      ShowName		      off
+	      Gain		      "5/9"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [105, 15, 125, 50]
+	      ShowName		      off
+	      IconShape		      "rectangular"
+	      Inputs		      "+-"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Celsius\nout"
+	      Position		      [205, 25, 225, 45]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "Celsius\nout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Fahrenheit\nin"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Polar to\nCartesian"
+	  Ports			  [2, 2, 0, 0, 0]
+	  Position		  [20, 17, 50, 48]
+	  ShowPortLabels	  on
+	  MaskType		  "Polar2Cart"
+	  MaskDescription	  "Transformation from polar to cartesian coor"
+"dinates.\n[r, theta] -> [x, y]\n\nx = r * cos(theta);\ny = r * sin(theta);\n"
+	  MaskHelp		  "Unmask this block for more help."
+	  MaskDisplay		  "plot(0,0,100,100,[25,20,15,20,20],[85,95,85"
+",95,20],[70,20,95,86,95,85],[60,20,20,15,20,25],[70,70],[45,54],[70,70],[30,4"
+"0],[70,70],[20,25],[55,65],[60,60],[40,50],[60,60],[25,34],[60,60],[20,21],[6"
+"0,60],[70,70,68],[57,60,60])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Polar to\nCartesian"
+	    Location		    [4, 51, 363, 257]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "r "
+	      Position		      [20, 70, 40, 90]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "theta "
+	      Position		      [20, 129, 40, 151]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [75, 96, 105, 129]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "r->x"
+	      Position		      [155, 72, 260, 98]
+	      Expr		      "u[1]*cos(u[2])"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "theta->y"
+	      Position		      [160, 129, 265, 151]
+	      Expr		      "u[1]*sin(u[2])"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "x"
+	      Position		      [295, 75, 315, 95]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "y"
+	      Position		      [295, 130, 315, 150]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 0]
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"r->x"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"theta->y"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "r->x"
+	      SrcPort		      1
+	      DstBlock		      "x"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "r "
+	      SrcPort		      1
+	      Points		      [10, 0; 0, 25]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "theta "
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -20]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "theta->y"
+	      SrcPort		      1
+	      DstBlock		      "y"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Radians\nto Degrees"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [95, 225, 125, 255]
+	  ShowPortLabels	  on
+	  MaskType		  "RadiansToDegrees"
+	  MaskDescription	  "Conversion from Radians to Degrees.\n\nD=18"
+"0/pi*R"
+	  MaskHelp		  "This block converts from Radians to Degrees"
+"."
+	  MaskDisplay		  "disp('R2D')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Radians\nto Degrees"
+	    Location		    [337, 532, 542, 629]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Radians\nin"
+	      Position		      [15, 25, 35, 45]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      Position		      [60, 17, 110, 53]
+	      ShowName		      off
+	      Gain		      "180/pi"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Degrees\nout"
+	      Position		      [135, 25, 155, 45]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Radians\nin"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Degrees\nout"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Spherical to\nCartesian"
+	  Ports			  [3, 3, 0, 0, 0]
+	  Position		  [20, 90, 50, 120]
+	  ShowPortLabels	  on
+	  MaskType		  "Sph2Cart"
+	  MaskDescription	  "Transformation from spherical to cartesian "
+"coordinates.\n[r, theta, phi] -> [x, y, z]\n\nx = r * sin(phi) * cos(theta);"
+"\ny = r * sin(phi) * sin(theta);\nz = r * cos(phi);"
+	  MaskHelp		  "Unmask this block for more help."
+	  MaskDisplay		  "plot(0,0,100,100,[45,40,35,40,40],[85,95,85"
+",95,40],[85,95,85,95,40],[35,40,45,40,40],[60,40,10,20,10,14],[70,40,10,13,10"
+",20],[56,45],[70,70],[60,60],[50,60],[60,60],[30,40],[50,60],[20,20],[30,40],"
+"[20,20],[45,55],[35,25],[75,65],[35,25])"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Spherical to\nCartesian"
+	    Location		    [92, 139, 715, 491]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    AutoZoom		    on
+	    Block {
+	      BlockType		      Inport
+	      Name		      "r"
+	      Position		      [20, 70, 40, 90]
+	      Port		      "1"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "theta"
+	      Position		      [20, 164, 40, 186]
+	      Port		      "2"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "phi"
+	      Position		      [20, 114, 40, 136]
+	      Port		      "3"
+	      PortWidth		      "-1"
+	      SampleTime	      "-1"
+	      DataType		      "auto"
+	      SignalType	      "auto"
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [75, 97, 105, 133]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux1"
+	      Ports		      [2, 1, 0, 0, 0]
+	      Position		      [315, 107, 345, 143]
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "none"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "temp"
+	      Position		      [155, 102, 260, 128]
+	      Expr		      "u[1]*sin(u[2])"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "x"
+	      Position		      [395, 112, 500, 138]
+	      Expr		      "u[1]*cos(u[2])"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "y"
+	      Position		      [395, 209, 500, 231]
+	      Expr		      "u[1]*sin(u[2])"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "z"
+	      Position		      [395, 304, 500, 326]
+	      Expr		      "u[1]*cos(u[2])"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "X"
+	      Position		      [560, 115, 580, 135]
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Y"
+	      Position		      [560, 210, 580, 230]
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Z"
+	      Position		      [565, 305, 585, 325]
+	      Port		      "3"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"temp"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 200]
+		DstBlock		"z"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Mux1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"x"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 95]
+		DstBlock		"y"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "theta"
+	      SrcPort		      1
+	      Points		      [235, 0; 0, -40]
+	      DstBlock		      "Mux1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "phi"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "r"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "temp"
+	      SrcPort		      1
+	      DstBlock		      "Mux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "x"
+	      SrcPort		      1
+	      DstBlock		      "X"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "y"
+	      SrcPort		      1
+	      DstBlock		      "Y"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "z"
+	      SrcPort		      1
+	      DstBlock		      "Z"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+  }
+}
